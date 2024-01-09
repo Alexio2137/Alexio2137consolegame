@@ -7,12 +7,12 @@ def clear_terminal():
 class DaneGry:
     def lokalizacje(self):
         self.krainy = {
-        'kraj_A': {'opis': 'Opis kraju A', 'utrata staminy': 10},
-        'kraj_B': {'opis': 'Opis kraju B', 'utrata staminy': 15},
-        'kraj_C': {'opis': 'Opis kraju C', 'utrata staminy': 20},
-        'kraj_D': {'opis': 'Opis kraju D', 'utrata staminy': 12},
-        'kraj_E': {'opis': 'Opis kraju E', 'utrata staminy': 18},
-        'kraj_F': {'opis': 'Opis kraju F', 'utrata staminy': 25},
+        'Wiecznie zielone łąki': {'opis': '"Podstawowa" kraina. Rozciągające się polany i niewielkie, lecz bogate w roślinność lasy liściaste z niezbyt mocnymi przeciwnikami.', 'utrata staminy': 4},
+        'Przesadnie wysokie wyżyny': {'opis': 'Ciężko dostępna kraina położona na wysokości wielu gór. Jest bardzo rzadko zaludniona ze względu na masę groźnych potworów. Z większości miast pozostały tylko ruiny pełne rozmaitych skarbów.', 'utrata staminy': 18},
+        'Puszcza Reymlandzka': {'opis': 'Mglista puszcza na terenie niewielkiego królestwa Reymland. Doświadczeni czarodzieje i kupcy lubią pozyskiwać tu surowce ze względu na dużą różnorodność składników przydatnych m.in. do alchemii. Legendy głoszą, że można tu napotkać się na nieumarłych.', 'utrata staminy': 10},
+        'Thriller Bark': {'opis': 'Jest to ogromna, potężna łódź-miasto. Thriller Bark znane jest z mrocznej atmosfery i zamieszkują go różne upiorne stworzenia. ', 'utrata staminy': 12},
+        'Hueco Mundo': {'opis': 'Hueco Mundo jest pustynną krainą, wypełnioną martwym piaskiem, okazałymi skałami i wielkimi jamami. Jest zamieszkiwane przez spaczone dusze - Hollowy oraz ich wyższe, znacznie potężniejsze ewolucje, często rozumne Arrancary', 'utrata staminy': 25},
+        'Góry Błękitnego Ognia': {'opis': 'Wulkaniczna aktywność w tych górach wydziela błękitne płomienie. Mieszkańcy wykorzystują je do magii, a wulkaniczna skała jest cenionym surowcem.', 'utrata staminy': 10},
         }
 
         #miejsce na lokalizacje
