@@ -1,0 +1,2 @@
+class enchanty:
+    pass

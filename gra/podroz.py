@@ -1,0 +1,4 @@
+#Aleks
+
+class podroz:
+    pass
