@@ -1,6 +1,6 @@
 #Aleks, Wojtek i Mateusz
 
-from mechaniki import clear_terminal
+from dane import clear_terminal
 from dane import dane_gry
 from prettytable import PrettyTable  # Instaluj: pip install prettytable
 from termcolor import colored  # Instaluj: pip install termcolor
