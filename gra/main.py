@@ -2,6 +2,7 @@
 from prettytable import PrettyTable  # Instaluj: pip install prettytable
 from termcolor import colored  # Instaluj: pip install termcolor
 from dane import DaneGry
+from dane import clear_terminal
 from gracz import Gracz
 from osada import Osada
 from inventory import inventory
@@ -27,6 +28,7 @@ def stworz_nowego_gracza(dane_gry):
 nowy_gracz = stworz_nowego_gracza(DaneGry())  
 
 while nowy_gracz.hp > 0:
+    clear_terminal()
     table = PrettyTable()
     # Dodawanie kolumn do tabeli
     table.field_names = [colored("#", 'cyan'), colored("Opcja", 'cyan')]
