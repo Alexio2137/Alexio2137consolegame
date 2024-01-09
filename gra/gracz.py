@@ -71,7 +71,26 @@ class Gracz:
             'bonusobciazenie': 0
         }
         self.inventory = {
-            
+            'rzeczy': {
+                'hełmy': [],
+                'zbroje': [],
+                'budy': [],
+                'rękawice': [],
+                'bronie': [],
+                'narzędzia': [],
+                'potki': {
+                    'leczące': [],
+                    'zwiększające ap': [],
+                    'zwiększające dp': [],
+                    'odnawiające endegie': []
+                }
+            },
+            'picia': [],
+            'jedzenie': [],
+            'looty': [],
+            'stajnia': [],
+            'inne': []
+
         }
 
     def menu_gracza(self):
