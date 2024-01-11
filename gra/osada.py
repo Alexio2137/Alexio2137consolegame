@@ -9,7 +9,7 @@ class Osada:
     def __init__(self, dane_gry):
         pass
 
-    def kup_przedmiot(self, gracz, kategoria, nazwa_przedmiotu):
+    def kupprzedmiot(self, gracz, kategoria, nazwa_przedmiotu):
         pass
 
 # Utworzenie instancji klasy Osada

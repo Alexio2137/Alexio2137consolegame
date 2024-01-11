@@ -1,9 +1,14 @@
 #Aleks, Wojtek i Mateusz
 
+from inventory import Inventory
 from dane import clear_terminal
-from dane import dane_gry
+from dane import DaneGry
 from prettytable import PrettyTable  # Instaluj: pip install prettytable
 from termcolor import colored  # Instaluj: pip install termcolor
+
+class Gracz:
+    def __init__(self, imie=""):
+        self.imie = imie
 
 
 class Gracz:
@@ -72,24 +77,24 @@ class Gracz:
         }
         self.inventory = {
             'rzeczy': {
-                'hełmy': [],
-                'zbroje': [],
-                'budy': [],
-                'rękawice': [],
-                'bronie': [],
-                'narzędzia': [],
+                'hełmy': [{'nazwa': '', 'ilosc': 0}],
+                'zbroje': [{'nazwa': '', 'ilosc': 0}],
+                'buty': [{'nazwa': '', 'ilosc': 0}],
+                'rękawice': [{'nazwa': '', 'ilosc': 0}],
+                'bronie': [{'nazwa': '', 'ilosc': 0}],
+                'narzędzia': [{'nazwa': '', 'ilosc': 0}],
                 'potki': {
-                    'leczące': [],
-                    'zwiększające ap': [],
-                    'zwiększające dp': [],
-                    'odnawiające endegie': []
+                    'leczące': [{'nazwa': '', 'ilosc': 0}],
+                    'zwiększające ap': [{'nazwa': '', 'ilosc': 0}],
+                    'zwiększające dp': [{'nazwa': '', 'ilosc': 0}],
+                    'odnawiające energie': [{'nazwa': '', 'ilosc': 0}]
                 }
             },
-            'picia': [],
-            'jedzenie': [],
-            'looty': [],
-            'stajnia': [],
-            'inne': []
+            'picia': [{'nazwa': '', 'ilosc': 0}],
+            'jedzenie': [{'nazwa': '', 'ilosc': 0}],
+            'looty': [{'nazwa': '', 'ilosc': 0}],
+            'stajnia': [{'nazwa': '', 'ilosc': 0}],
+            'inne': [{'nazwa': '', 'ilosc': 0}]
 
         }
 
@@ -107,8 +112,9 @@ class Gracz:
             table.add_row([colored("3", 'yellow'), colored("Poziomy", 'cyan')])
             table.add_row([colored("4", 'yellow'), colored("Wyposażenie", 'magenta')])
             table.add_row([colored("5", 'yellow'), colored("Inventory informacje", 'blue')])
-            table.add_row([colored("6", 'yellow'), colored("effekty", 'red')])
-            table.add_row([colored("7", 'yellow'), colored("Powrót", 'red')])
+            table.add_row([colored("6", 'yellow'), colored("Inventory", "green")])
+            table.add_row([colored("7", 'yellow'), colored("effekty", 'red')])
+            table.add_row([colored("8", 'yellow'), colored("Powrót", 'red')])
 
             # Ustawianie koloru nagłówka
             table.title = colored(' Menu Gracza ', 'blue')
@@ -135,9 +141,11 @@ class Gracz:
                 self.inventory_informacje()
             elif menu_gracza_wybor == '6':
                 clear_terminal()
-                self.wyswietl_effekty()
-                clear_terminal()
+                Inventory.inventory_menu()
             elif menu_gracza_wybor == '7':
+                clear_terminal()
+                self.wyswietl_effekty()
+            elif menu_gracza_wybor == '8':
                 clear_terminal()
                 break
             else:
@@ -153,10 +161,10 @@ class Gracz:
         table.add_row(['Poziom energii', colored(str(self.energia), 'green')])
         table.add_row(['Ilość monet', colored(str(self.coiny), 'yellow')])
 
-        print(colored('**** Informacje o Graczu ****', 'green'))
+        print(colored(' Informacje o Graczu ', 'green'))
         print(table)
         print(" ")
-        stop = input('naciśnij enter aby powrócić: ')
+        input("Naciśnij enter aby powrócić:  ")
         clear_terminal()
 
     def skile_gracza(self):
@@ -165,10 +173,10 @@ class Gracz:
         table.add_row(['Dodatkowe obrony', colored(', '.join(self.skile['dodatkowe_obrony']), 'yellow')])
         table.add_row(['Zaklęcia', colored(', '.join(self.skile['zaklecia']), 'yellow')])
 
-        print(colored('**** Umiejętności Gracza ****', 'yellow'))
+        print(colored(' Umiejętności Gracza ', 'yellow'))
         print(table)
         print(" ")
-        stop = input('naciśnij enter aby powrócić: ')
+        input("Naciśnij enter aby powrócić:  ")
         clear_terminal()
 
     def poziomy_gracza(self):
@@ -178,10 +186,10 @@ class Gracz:
         table.add_row(['Łowienie', colored(str(self.poziomy['fishlvl']), 'cyan'), colored(str(self.poziomy['fishxp']), 'cyan')])
         table.add_row(['Walka', colored(str(self.poziomy['battlelvl']), 'cyan'), colored(str(self.poziomy['battlexp']), 'cyan')])
 
-        print(colored('**** Poziomy Gracza ****', 'cyan'))
+        print(colored(' Poziomy Gracza ', 'cyan'))
         print(table)
         print(" ")
-        stop = input('naciśnij enter aby powrócić: ')
+        input("Naciśnij enter aby powrócić:  ")
         clear_terminal()
 
     def wyposazenie_gracza(self):
@@ -189,10 +197,10 @@ class Gracz:
         for slot, przedmiot in self.wyposazenie.items():
             table.add_row([colored(slot.capitalize(), 'magenta'), colored(przedmiot if przedmiot else '-', 'magenta')])
 
-        print(colored('**** Wyposażenie Gracza ****', 'magenta'))
+        print(colored(' Wyposażenie Gracza ', 'magenta'))
         print(table)
         print(" ")
-        stop = input('naciśnij enter aby powrócić: ')
+        input("Naciśnij enter aby powrócić:  ")
         clear_terminal()
 
     def inventory_informacje(self):
@@ -202,10 +210,10 @@ class Gracz:
         table.add_row([colored('Obciążenie', 'blue'), colored(f"{self.eq_informacje['obciarzenie']} / {self.eq_informacje['maxobciazenie']}", 'blue')])
         table.add_row([colored('Bonus obciążenia', 'blue'), colored(str(self.eq_informacje['bonusobciazenie']), 'blue')])
 
-        print(colored('**** Informacje o Ekwipunku ****', 'blue'))
+        print(colored(' Informacje o Ekwipunku ', 'blue'))
         print(table)
         print(" ")
-        stop = input('naciśnij enter aby powrócić: ')
+        input("Naciśnij enter aby powrócić:  ")
         clear_terminal()
 
     def wyswietl_effekty(self):
@@ -213,10 +221,10 @@ class Gracz:
         for efekt, wartosc in self.effekty.items():
             table.add_row([colored(efekt.capitalize(), 'red'), colored(str(wartosc), 'red')])
 
-        print(colored('**** Efekty Gracza ****', 'red'))
+        print(colored(' Efekty Gracza ', 'red'))
         print(table)
         print(" ")
-        stop = input('naciśnij enter aby powrócić: ')
+        input("Naciśnij enter aby powrócić:  ")
         clear_terminal()
 
     def czy_gracz_umarl(self):

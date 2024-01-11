@@ -1,4 +1,4 @@
 #Aleks
 
-class walka:
+class Walka:
     pass

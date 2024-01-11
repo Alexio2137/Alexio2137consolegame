@@ -1,2 +1,2 @@
-class enchanty:
+class Enchanty:
     pass

@@ -5,14 +5,12 @@ from dane import DaneGry
 from dane import clear_terminal
 from gracz import Gracz
 from osada import Osada
-from inventory import inventory
-from fishing import fishing
-from podroz import podroz
-from Akcje import akcje
-from mechaniki import mechaniki
-from enchanty import enchanty
+from inventory import Inventory
+from fishing import Fishing
+from podroz import Podroz
+from Akcje import Akcje
+from enchanty import Enchanty
 
-# Funkcja tworząca nowego gracza i dokonująca przykładowego zakupu hełmu
 def stworz_nowego_gracza(dane_gry):
     while True:
         imie = input("Podaj imię gracza: ")
@@ -24,7 +22,6 @@ def stworz_nowego_gracza(dane_gry):
     nowy_gracz = Gracz(imie)
     return nowy_gracz
 
-# Główna pętla gry
 nowy_gracz = stworz_nowego_gracza(DaneGry())  
 
 while nowy_gracz.hp > 0:
@@ -50,9 +47,9 @@ while nowy_gracz.hp > 0:
     if wybor == "1":
         nowy_gracz.menu_gracza()
     elif wybor == "2":
-        podroz.menu_podrozy(nowy_gracz)  # Załóżmy, że istnieje funkcja menu_podrozy w module podroz
+        Podroz.menu_podrozy(nowy_gracz)  
     elif wybor == "3":
-        akcje.menu_akcji(nowy_gracz)  # Załóżmy, że istnieje funkcja menu_akcji w module akcje
+        Akcje.menu_akcji(nowy_gracz)  
     elif wybor == "4":
         print("Dziękujemy za grę. Do zobaczenia!")
         break
