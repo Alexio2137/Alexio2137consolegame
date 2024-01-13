@@ -13,6 +13,8 @@ console = Console()
 
 dane_gry = DaneGry()
 
+
+
 def fishing_process():
     fishing_time = r.randrange(2, 15)
     loading_time = fishing_time * 5
@@ -65,3 +67,36 @@ class Fishing:
                 break
             else:
                 console.print("[bold red]Niepoprawny wybór. Spróbuj ponownie.[/bold red]")
+
+
+
+'''
+ def dodaj_rybe_do_inventory(self, nazwa_ryby, ilosc=1):
+        if nazwa_ryby in dane_gry.ryby:
+            if 'ryby' not in self.inventory:
+                self.inventory['ryby'] = {nazwa_ryby: ilosc}
+            else:
+                if nazwa_ryby in self.inventory['ryby']:
+                    self.inventory['ryby'][nazwa_ryby] += ilosc
+                else:
+                    self.inventory['ryby'][nazwa_ryby] = ilosc
+        else:
+            print(f"Ryba {nazwa_ryby} nie istnieje w danych gry.")
+
+ def fishing_process(self):
+        fishing_time = r.randrange(2, 15)
+        loading_time = fishing_time * 5
+
+        with Progress(transient=True) as progress:
+            task = progress.add_task("[cyan]Trwa wędkowanie...", total=loading_time)
+            while not progress.finished:
+                progress.update(task, advance=1)
+                time.sleep(0.2)
+
+        rprint("[yellow]Złowiłeś rybę![/yellow]")
+
+        # Dodawanie złowionej ryby do inventory gracza
+        nazwa_ryby = r.choice(list(dane_gry.ryby.keys()))
+        ilosc_ryb = r.randint(1, 3)  # Możesz dostosować ilość złowionych ryb
+        self.gracz.dodaj_rybe_do_inventory(nazwa_ryby, ilosc_ryb)           
+'''

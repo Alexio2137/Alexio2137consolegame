@@ -131,5 +131,7 @@ while gracz.hp > 0:
     elif wybor == "4":
         console.print("[bold red]Dziękujemy za grę. Do zobaczenia![/bold red]")
         break
+    elif wybor == "i":
+        Inventory.inventory_menu(gracz)
     else:
         console.print("[bold yellow]Niepoprawny wybór. Spróbuj ponownie.[/bold yellow]")

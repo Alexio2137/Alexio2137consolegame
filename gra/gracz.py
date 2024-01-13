@@ -3,7 +3,6 @@
 from rich.console import Console
 from rich.table import Table
 from rich import print as rprint
-from inventory import Inventory
 from dane import clear_terminal
 from dane import DaneGry
 console = Console()
@@ -114,9 +113,8 @@ class Gracz:
             table.add_row("3", "[cyan]Poziomy[/cyan]")
             table.add_row("4", "[magenta]Wyposażenie[/magenta]")
             table.add_row("5", "[blue]Inventory informacje[/blue]")
-            table.add_row("6", "[green]Inventory[/green]")
-            table.add_row("7", "[red]Effekty[/red]")
-            table.add_row("8", "[red]Powrót[/red]")
+            table.add_row("6", "[red]Effekty[/red]")
+            table.add_row("7", "[red]Powrót[/red]")
 
             console.print(table)
             menu_gracza_wybor = input('Wybierz opcję: ')
@@ -138,11 +136,8 @@ class Gracz:
                 self.inventory_informacje()
             elif menu_gracza_wybor == '6':
                 console.clear()
-                Inventory.inventory_menu()
-            elif menu_gracza_wybor == '7':
-                console.clear()
                 self.wyswietl_effekty()
-            elif menu_gracza_wybor == '8':
+            elif menu_gracza_wybor == '7':
                 console.clear()
                 break
             else:
