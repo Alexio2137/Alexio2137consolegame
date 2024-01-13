@@ -1,5 +1,6 @@
 from rich.console import Console # pip install rich
 from rich.table import Table
+from rich.panel import Panel
 from rich import print
 from dane import DaneGry
 from dane import clear_terminal
@@ -13,21 +14,90 @@ from enchanty import Enchanty
 
 console = Console()
 
-def stworz_nowego_gracza(dane_gry):
+def wybierz_poziom_trudnosci():
+    table = Table(title="Wybierz poziom trudności", title_style="bold magenta")
+    table.add_column("Numer", style="cyan", justify="center")
+    table.add_column("Poziom trudności", style="bold green", justify="center")
+
+    table.add_row("1", "Normalny")
+    table.add_row("2", "Trudny")
+    table.add_row("3", "Ekstremalny")
+    table.add_row("4", "Niemożliwy")
+
+    console.print(table)
+    
     while True:
-        imie = input("Podaj imię gracza: ")
-        if imie.strip():
-            break
+        wybor_poziomu = input("Twój wybór: ")
+
+        if wybor_poziomu in ["1", "2", "3", "4"]:
+            return {
+                "1": "Normalny",
+                "2": "Trudny",
+                "3": "Ekstremalny",
+                "4": "Niemożliwy"
+            }[wybor_poziomu]
         else:
-            print("[bold red]Imię nie może być puste. Spróbuj ponownie.[/bold red]")
+            print("Nieprawidłowy wybór. Spróbuj ponownie.")
+def game_start():
+    console.print("[bold cyan]Mroczne Przejścia:[/bold cyan]")
+    console.print("[italic]Eksplozja Handlu i Wojenne Wyprawy[/italic]")
+    console.print()
 
-    nowy_gracz = Gracz(imie)
-    return nowy_gracz
+    while True:
+        # Display start menu
+        start_menu_table = Table(show_lines=True)
+        start_menu_table.add_column("[cyan]# [/cyan]", justify="center", style="bold cyan")
+        start_menu_table.add_column("[cyan]=== Menu Startowe ===[/cyan]", style="bold cyan")
+        start_menu_table.add_row("[yellow]1[/yellow]", "[green]Rozpocznij Grę[/green]")
+        start_menu_table.add_row("[yellow]2[/yellow]", "[magenta]Informacje o Grze[/magenta]")
+        start_menu_table.add_row("[yellow]3[/yellow]", "[blue]Autorzy[/blue]")
 
-nowy_gracz = stworz_nowego_gracza(DaneGry())  
+        console.print(start_menu_table)
 
+        wybor = input("Wybierz opcję: ")
 
-while nowy_gracz.hp > 0:
+        if wybor == "1":
+            # Rozpocznij Grę
+            start_game_table = Table(show_lines=True)
+            start_game_table.add_column("[cyan]# [/cyan]", justify="center", style="bold cyan")
+            start_game_table.add_column("[cyan]=== Menu Startowe ===[/cyan]", style="bold cyan")
+            start_game_table.add_row("[yellow]1[/yellow]", "[green]Stwórz postać[/green]")
+            start_game_table.add_row("[yellow]2[/yellow]", "[magenta]Wczytaj grę[/magenta]")
+            start_game_table.add_row("[yellow]3[/yellow]", "[blue]Zagraj jako gość[/blue]")
+            console.print(start_game_table)
+
+            wybor_start_game = input("Wybierz opcję: ")
+
+            if wybor_start_game == "1":
+                gracz_imie = input("Podaj imię gracza: ")
+                poziom_trudnosci = wybierz_poziom_trudnosci()
+                gracz = Gracz(gracz_imie, poziom_trudnosci)
+
+                return gracz
+            elif wybor_start_game == "2":
+                console.print("[bold red]Funkcja Wczytaj Grę jest obecnie niedostępna.[/bold red]")
+            elif wybor_start_game == "3":
+                gracz_imie = 'Guest'
+                poziom_trudnosci = wybierz_poziom_trudnosci()
+                gracz = Gracz(gracz_imie, poziom_trudnosci)
+                return gracz
+            else:
+                console.print("[bold red]Niepoprawny wybór. Spróbuj ponownie.[/bold red]")
+        elif wybor == "2":
+            # Informacje o Grze
+            console.print("[bold magenta]Mroczne Przejścia:[/bold magenta]")
+            console.print("[italic]Eksplozja Handlu i Wojenne Wyprawy[/italic]")
+            console.print("[bold blue]Gra RPG tekstowa, gdzie podejmujesz decyzje i eksplorujesz świat.[/bold blue]")
+        elif wybor == "3":
+            # Autorzy
+            console.print("[bold blue]Autorzy:[/bold blue]")
+            console.print("Twórca: Jan Kowalski")
+            console.print("Projektant: Anna Nowak")
+        else:
+            console.print("[bold yellow]Niepoprawny wybór. Spróbuj ponownie.[/bold yellow]")
+gracz = game_start()
+
+while gracz.hp > 0:
     clear_terminal()
     table = Table(show_lines=True)
     
@@ -53,11 +123,11 @@ while nowy_gracz.hp > 0:
     wybor = input("Wybierz opcję: ")
 
     if wybor == "1":
-        nowy_gracz.menu_gracza()
+        gracz.menu_gracza()
     elif wybor == "2":
-        Podroz.menu_podrozy(nowy_gracz)  
+        Podroz.menu_podrozy(gracz)  
     elif wybor == "3":
-        Akcje.menu_akcji(nowy_gracz)  
+        Akcje.menu_akcji(gracz)  
     elif wybor == "4":
         console.print("[bold red]Dziękujemy za grę. Do zobaczenia![/bold red]")
         break

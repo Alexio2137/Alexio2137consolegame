@@ -6,19 +6,13 @@ from rich import print as rprint
 from inventory import Inventory
 from dane import clear_terminal
 from dane import DaneGry
-from prettytable import PrettyTable  # Instaluj: pip install prettytable
-from termcolor import colored  # Instaluj: pip install termcolor
 console = Console()
-
-class Nick:
-    def __init__(self, imie=""):
-        self.imie = imie
 
 
 
 
 class Gracz:
-    def __init__(self, imie):
+    def __init__(self, imie, poziom_trudnosci):
         self.imie = imie
         self.hp = 100
         self.ap = 50
@@ -35,6 +29,15 @@ class Gracz:
             'maxpragnienie': 60,
             'zatrucie_potka': 0,
             'max_zatrucie_potka': 50,
+        }
+        self.poziom_trudnosci = poziom_trudnosci
+        self.statystyki = {
+            'Zabujstwa': 0,
+            'podroze': 0,
+            'zdobyte_zloto': 0,
+            'zlowione_ryby': 0,
+            'sprzedane_itemy': 0,
+            'uzyte_potki': 0
         }
         self.mapa = {
             'miasta': [],
@@ -150,6 +153,7 @@ class Gracz:
 
         table.add_column("[cyan]Atrybut[/cyan]", "[cyan]Wartość[/cyan]")
         table.add_row("Imię", f"[cyan]{self.imie}[/cyan]")
+        table.add_row("Poziom Trudności", f"[green]{self.poziom_trudnosci}[/green]")
         table.add_row("Punkty życia (HP)", f"[red]{self.hp}[/red]")
         table.add_row("Punkty ataku (AP)", f"[yellow]{self.ap + self.bonus_ap}[/yellow]")
         table.add_row("Punkty obrony (DP)", f"[yellow]{self.dp + self.bonus_dp}[/yellow]")

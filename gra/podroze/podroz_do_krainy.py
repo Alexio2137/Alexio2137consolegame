@@ -15,7 +15,28 @@ dane_gry.lokalizacje()
 console = Console()
 
 
+
+
+def menu_wybranej_krainy(wybrana_kraina, gracz):  # Added gracz parameter
+        if wybrana_kraina == '1':
+            menu_wiecznie_zielone_laki(gracz)
+        elif wybrana_kraina == '2':
+            menu_przesadnie_wysokie_wyzimy(gracz)
+        elif wybrana_kraina == '3':
+            menu_puszcza_reymlandzka(gracz)
+        elif wybrana_kraina == '4':
+            menu_thriller_bark(gracz)
+        elif wybrana_kraina == '5':
+            menu_hueco_mundo(gracz)
+        elif wybrana_kraina == '6':
+            menu_gory_blekitnego_ognia(gracz)
+
+
+
 class PodrozDoKrainy:
+
+
+
     def menu_wyboru_krainy(self, dane_gry, gracz):
         print("Menu Wyboru Krainy:")
         
@@ -41,7 +62,19 @@ class PodrozDoKrainy:
                     console.print(f"Wybierasz podróż do krainy: [bold]{wybrana_kraina}[/bold]")
 
                     if wybrana_kraina in dane_gry.krainy:
-                        self.menu_wybranej_krainy(wybrana_kraina, gracz)
+                        if wybrana_kraina == 'Wiecznie zielone łąki':
+                            menu_wiecznie_zielone_laki(gracz)
+                        elif wybrana_kraina == 'Przesadnie wysokie wyżyny':
+                            menu_przesadnie_wysokie_wyzimy(gracz)
+                        elif wybrana_kraina == 'Puszcza Reymlandzka':
+                            menu_puszcza_reymlandzka(gracz)
+                        elif wybrana_kraina == 'Thriller Bark':
+                            menu_thriller_bark(gracz)
+                        elif wybrana_kraina == 'Hueco Mundo':
+                            menu_hueco_mundo(gracz)
+                        elif wybrana_kraina == 'Góry Błękitnego Ognia':
+                            menu_gory_blekitnego_ognia(gracz)
+                        
                     else:
                         console.print("Nieprawidłowy numer krainy. Spróbuj ponownie.")
                 else:
@@ -49,16 +82,8 @@ class PodrozDoKrainy:
             except ValueError:
                 console.print("Nieprawidłowe dane. Wprowadź poprawny numer krainy lub 'q' aby powrócić.")
 
-    def menu_wybranej_krainy(self, wybrana_kraina, gracz):
-        if wybrana_kraina == 'Wiecznie zielone łąki':
-            self.menu_wiecznie_zielone_laki(gracz)
-        elif wybrana_kraina == 'Przesadnie wysokie wyżyny':
-            self.menu_przesadnie_wysokie_wyzimy(gracz)
-        elif wybrana_kraina == 'Puszcza Reymlandzka':
-            self.menu_puszcza_reymlandzka(gracz)
-        elif wybrana_kraina == 'Thriller Bark':
-            self.menu_thriller_bark(gracz)
-        elif wybrana_kraina == 'Hueco Mundo':
-            self.menu_hueco_mundo(gracz)
-        elif wybrana_kraina == 'Góry Błękitnego Ognia':
-            self.menu_gory_blekitnego_ognia(gracz)
+
+
+
+
+    

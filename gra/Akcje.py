@@ -5,6 +5,8 @@ from dane import DaneGry
 from dane import clear_terminal
 from gracz import Gracz
 from mechaniki import odpocznij, zjedz, napij_sie
+from fishing import Fishing
+
 
 console = Console()
 
@@ -34,6 +36,9 @@ class Akcje:
             elif wybor == '3':
                 console.clear()
                 napij_sie()
+            elif wybor == 'fishung':
+                console.clear()
+                Fishing.menu_fishing()
             elif wybor == '4':
                 break
             else:

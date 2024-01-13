@@ -4,6 +4,7 @@ import os
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+
 class DaneGry:
     def lokalizacje(self):
         self.krainy = {
@@ -135,6 +136,7 @@ class DaneGry:
         self.konie = {
             'koń': {'opis: Coś tam, DodatkowaStamina': 10, 'CenaKupna': 8, 'CenaSprzedarzy': 5}
         }
+    
 
 # Utwórz instancję klasy DaneGry
 dane_gry = DaneGry()

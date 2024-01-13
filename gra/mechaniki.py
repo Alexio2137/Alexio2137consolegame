@@ -15,6 +15,6 @@ def zjedz():
 def napij_sie():
     print("Napij się, by ugasić pragnienie.")
     input("Naciśnij enter aby powrócić:  ")
-    
-        
-    
+
+def informacje_o_grze():
+    pass

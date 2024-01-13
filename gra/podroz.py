@@ -17,8 +17,9 @@ dane_gry.lokalizacje()
 
 
 class Podroz:
+
     @staticmethod
-    def menu_podrozy(gracz):
+    def menu_podrozy(gracz):  # Added gracz parameter
         while True:
             console.clear()
             table = Table(title="=== Menu Podróży ===", show_header=False, header_style="bold magenta")
@@ -54,10 +55,7 @@ class Podroz:
                 Akcje.menu_akcji(gracz)
             elif wybor_opcji_podrozy == '3':
                 console.clear()
-                # Utwórz instancję klasy z innego folderu
-                podroz_instance = PodrozDoKrainy()
-                # Wywołaj metodę na instancji
-                podroz_instance.menu_wyboru_krainy(dane_gry, gracz)
+                PodrozDoKrainy().menu_wyboru_krainy(dane_gry, gracz)  # Added call to PodrozDoKrainy().menu_wyboru_krainy
             elif wybor_opcji_podrozy == '4':
                 console.clear()
                 # Tutaj dodaj logikę dla opcji 4 - Użyj mapy
