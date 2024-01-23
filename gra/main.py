@@ -11,10 +11,12 @@ from fishing import Fishing
 from podroz import Podroz
 from Akcje import Akcje
 from enchanty import Enchanty
+from mechaniki import informacje_o_grze, autorzy
 
 console = Console()
 
 def wybierz_poziom_trudnosci():
+    clear_terminal()
     table = Table(title="Wybierz poziom trudności", title_style="bold magenta")
     table.add_column("Numer", style="cyan", justify="center")
     table.add_column("Poziom trudności", style="bold green", justify="center")
@@ -44,7 +46,7 @@ def game_start():
     console.print()
 
     while True:
-        # Display start menu
+        clear_terminal()
         start_menu_table = Table(show_lines=True)
         start_menu_table.add_column("[cyan]# [/cyan]", justify="center", style="bold cyan")
         start_menu_table.add_column("[cyan]=== Menu Startowe ===[/cyan]", style="bold cyan")
@@ -57,6 +59,7 @@ def game_start():
         wybor = input("Wybierz opcję: ")
 
         if wybor == "1":
+            clear_terminal()
             # Rozpocznij Grę
             start_game_table = Table(show_lines=True)
             start_game_table.add_column("[cyan]# [/cyan]", justify="center", style="bold cyan")
@@ -69,30 +72,32 @@ def game_start():
             wybor_start_game = input("Wybierz opcję: ")
 
             if wybor_start_game == "1":
+                clear_terminal()
                 gracz_imie = input("Podaj imię gracza: ")
                 poziom_trudnosci = wybierz_poziom_trudnosci()
                 gracz = Gracz(gracz_imie, poziom_trudnosci)
 
                 return gracz
             elif wybor_start_game == "2":
+                clear_terminal()
                 console.print("[bold red]Funkcja Wczytaj Grę jest obecnie niedostępna.[/bold red]")
             elif wybor_start_game == "3":
+                clear_terminal()
                 gracz_imie = 'Guest'
                 poziom_trudnosci = wybierz_poziom_trudnosci()
                 gracz = Gracz(gracz_imie, poziom_trudnosci)
+                
                 return gracz
             else:
                 console.print("[bold red]Niepoprawny wybór. Spróbuj ponownie.[/bold red]")
         elif wybor == "2":
+            clear_terminal()
             # Informacje o Grze
-            console.print("[bold magenta]Mroczne Przejścia:[/bold magenta]")
-            console.print("[italic]Eksplozja Handlu i Wojenne Wyprawy[/italic]")
-            console.print("[bold blue]Gra RPG tekstowa, gdzie podejmujesz decyzje i eksplorujesz świat.[/bold blue]")
+            informacje_o_grze()
         elif wybor == "3":
+            clear_terminal()
             # Autorzy
-            console.print("[bold blue]Autorzy:[/bold blue]")
-            console.print("Twórca: Jan Kowalski")
-            console.print("Projektant: Anna Nowak")
+            autorzy()
         else:
             console.print("[bold yellow]Niepoprawny wybór. Spróbuj ponownie.[/bold yellow]")
 gracz = game_start()

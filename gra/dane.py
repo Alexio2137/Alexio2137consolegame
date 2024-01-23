@@ -8,18 +8,14 @@ def clear_terminal():
 class DaneGry:
     def lokalizacje(self):
         self.krainy = {
-        'Wiecznie zielone łąki': {'opis': '"Podstawowa" kraina. Rozciągające się polany i niewielkie, lecz bogate w roślinność lasy liściaste z niezbyt mocnymi przeciwnikami.', 'utrata staminy': 4},
-        'Przesadnie wysokie wyżyny': {'opis': 'Ciężko dostępna kraina położona na wysokości wielu gór. Jest bardzo rzadko zaludniona ze względu na masę groźnych potworów. Z większości miast pozostały tylko ruiny pełne rozmaitych skarbów.', 'utrata staminy': 18},
-        'Puszcza Reymlandzka': {'opis': 'Mglista puszcza na terenie niewielkiego królestwa Reymland. Doświadczeni czarodzieje i kupcy lubią pozyskiwać tu surowce ze względu na dużą różnorodność składników przydatnych m.in. do alchemii. Legendy głoszą, że można tu napotkać się na nieumarłych.', 'utrata staminy': 10},
-        'Thriller Bark': {'opis': 'Jest to ogromna, potężna łódź-miasto. Thriller Bark znane jest z mrocznej atmosfery i zamieszkują go różne upiorne stworzenia. ', 'utrata staminy': 12},
-        'Hueco Mundo': {'opis': 'Hueco Mundo jest pustynną krainą, wypełnioną martwym piaskiem, okazałymi skałami i wielkimi jamami. Jest zamieszkiwane przez spaczone dusze - Hollowy oraz ich wyższe, znacznie potężniejsze ewolucje, często rozumne Arrancary', 'utrata staminy': 25},
-        'Góry Błękitnego Ognia': {'opis': 'Wulkaniczna aktywność w tych górach wydziela błękitne płomienie. Mieszkańcy wykorzystują je do magii, a wulkaniczna skała jest cenionym surowcem.', 'utrata staminy': 10},
+        'Wiecznie zielone łąki': {'nazwa': 'Wiecznie zielone łąki', 'opis': '"Podstawowa" kraina. Rozciągające się polany i niewielkie, lecz bogate w roślinność lasy liściaste z niezbyt mocnymi przeciwnikami.', 'utrata staminy': 4},
+        'Przesadnie wysokie wyżyny': {'nazwa': 'Przesadnie wysokie wyżyny', 'opis': 'Ciężko dostępna kraina położona na wysokości wielu gór. Jest bardzo rzadko zaludniona ze względu na masę groźnych potworów. Z większości miast pozostały tylko ruiny pełne rozmaitych skarbów.', 'utrata staminy': 18},
+        'Puszcza Reymlandzka': {'nazwa': 'Puszcza Reymlandzka', 'opis': 'Mglista puszcza na terenie niewielkiego królestwa Reymland. Doświadczeni czarodzieje i kupcy lubią pozyskiwać tu surowce ze względu na dużą różnorodność składników przydatnych m.in. do alchemii. Legendy głoszą, że można tu napotkać się na nieumarłych.', 'utrata staminy': 10},
+        'Thriller Bark': {'nazwa': 'Thriller Bark', 'opis': 'Jest to ogromna, potężna łódź-miasto. Thriller Bark znane jest z mrocznej atmosfery i zamieszkują go różne upiorne stworzenia. ', 'utrata staminy': 12},
+        'Hueco Mundo': {'nazwa': 'Hueco Mundo', 'opis': 'Hueco Mundo jest pustynną krainą, wypełnioną martwym piaskiem, okazałymi skałami i wielkimi jamami. Jest zamieszkiwane przez spaczone dusze - Hollowy oraz ich wyższe, znacznie potężniejsze ewolucje, często rozumne Arrancary', 'utrata staminy': 25},
+        'Góry Błękitnego Ognia': {'nazwa': 'Góry Błękitnego Ognia', 'opis': 'Wulkaniczna aktywność w tych górach wydziela błękitne płomienie. Mieszkańcy wykorzystują je do magii, a wulkaniczna skała jest cenionym surowcem.', 'utrata staminy': 10},
         }
-
-        #miejsce na lokalizacje
-        self.lokalizacje = {
-            'las': {'Opis': 'las'}
-        }
+        
         #miejsce na wioski miasta obozy
         self.osady = {
             'Miasta': {
@@ -119,19 +115,7 @@ class DaneGry:
             }
             #miejsce na rozój
         }
-    def przeciwnicy(self):
-        #miejsce na przeciwników
-        self.przeciwnicy = {
-            'Szkielety': {
-                'Szkielet Wojownika': {'Opis': 'Nieumarły wojownik zbrojny w kościach. Poszukuj go w podziemiach grobowców.', 'Siła': 10, 'Obrona': 5, 'PunktyZdrowia': 30, 'Doświadczenie': 20, 'Złoto': 15}
-            },
-            'Gobliny': {
-                'Goblin Łotrzyk': {'Opis': 'Mały i chytry goblin specjalizujący się w podstępach. Czai się w lasach i gęstwinach.', 'Siła': 5, 'Obrona': 2, 'PunktyZdrowia': 15, 'Doświadczenie': 10, 'Złoto': 8}
-            },
-            'Bandyci': {
-                'Bandyta Łowca': {'Opis': 'Złoczyńca polujący na niewinnych podróżnych. Często spotykany na szlakach handlowych.', 'Siła': 12, 'Obrona': 7, 'PunktyZdrowia': 40, 'Doświadczenie': 25, 'Złoto': 20}
-            }
-        }
+        
     def konie(self):
         self.konie = {
             'koń': {'opis: Coś tam, DodatkowaStamina': 10, 'CenaKupna': 8, 'CenaSprzedarzy': 5}

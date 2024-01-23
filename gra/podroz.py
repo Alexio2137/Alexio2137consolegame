@@ -18,7 +18,6 @@ dane_gry.lokalizacje()
 
 class Podroz:
 
-    @staticmethod
     def menu_podrozy(gracz):  # Added gracz parameter
         while True:
             console.clear()
