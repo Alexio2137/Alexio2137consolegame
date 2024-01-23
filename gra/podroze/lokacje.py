@@ -371,3 +371,308 @@ class Lokacje_i_obiekty:
             print('Akcja po wyborze "tak"')
         else:
             pass
+    
+    #Thriller Bark
+        
+    def bagno_dlugie_cienie(gracz):
+        nazwa_lokacji = "Bagno Długie Cienie"
+        opis_lokacji = "Trudne bagno, w którym cienie przybierają niepokojące formy. Miejsce pełne zagadek i niebezpieczeństw."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def cmentarz_wiecznych_swiatel(gracz):
+        nazwa_lokacji = "Cmentarz Wiecznych Świateł"
+        opis_lokacji = "Trudny cmentarz oświetlony niewyjaśnionymi światłami. Miejsce spoczywania dusz, które nigdy nie gasną."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def dolina_mrocznych_tajemnic(gracz):
+        nazwa_lokacji = "Dolina Mrocznych Tajemnic"
+        opis_lokacji = "Trudna dolina pełna nieznanych tajemnic. Miejsce, gdzie cienie ukrywają mroczne sekrety."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def grobowiec_zagubionych_dusz(gracz):
+        nazwa_lokacji = "Grobowiec Zagubionych Dusz"
+        opis_lokacji = "Bardzo trudny grobowiec, w którym spoczywają dusze bez świadomości. Miejsce pełne melancholii i rozpaczy."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def jama_malowanych_ciemnosci(gracz):
+        nazwa_lokacji = "Jama Malowanych Ciemności"
+        opis_lokacji = "Bardzo trudna jaskinia, gdzie cienie przybierają kolorowe i złowieszczne formy. Miejsce sztuki i mrocznej magii."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def jaskinia_zakletych_marzen(gracz):
+        nazwa_lokacji = "Jaskinia Zaklętych Marzeń"
+        opis_lokacji = "Bardzo trudna jaskinia, w której spełniają się i przekształcają marzenia. Miejsce pełne tajemniczych iluzji."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def opuszczona_kopalnia_mroku(gracz):
+        nazwa_lokacji = "Opuszczona Kopalnia Mroku"
+        opis_lokacji = "Bardzo trudna kopalnia, gdzie cienie ukrywają starożytne tajemnice. Miejsce zapomnianych bogactw i niebezpieczeństw."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def strumyk_zaginionych_nadziei(gracz):
+        nazwa_lokacji = "Strumyk Zaginionych Nadziei"
+        opis_lokacji = "Bardzo trudny strumyk, gdzie cienie oplatają zaginione nadzieje. Miejsce melancholii i utraconych marzeń."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def rezydencja_zlowrogich_duchow(gracz):
+        nazwa_lokacji = "Rezydencja Złowrogich Duchów"
+        opis_lokacji = "Bardzo trudna rezydencja, w której zjawa cieni przemykają między pokojami. Miejsce nawiedzonej przeszłości."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def grota_nocy(gracz):
+        nazwa_lokacji = "Grota Nocy"
+        opis_lokacji = "Bardzo trudna grota, w której cienie przybierają mroczne kształty. Miejsce pełne tajemniczych spisków i niebezpieczeństw."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    #Hueco Mundo
+    def pustynia_rozpaczliwych_dusz(gracz):
+        nazwa_lokacji = "Pustynia Rozpaczliwych Dusz"
+        opis_lokacji = "Trudna pustynia, gdzie dusze cieni szukają spokoju. Miejsce przesiąknięte smutkiem i tajemnicami."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def jama_mrocznej_prozni(gracz):
+        nazwa_lokacji = "Jama Mrocznej Próżni"
+        opis_lokacji = "Trudna jama, gdzie cienie przenikają pustkę. Miejsce pełne nihilistycznej energii i mrocznych refleksji."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def jama_zadlacego_cienia(gracz):
+        nazwa_lokacji = "Jama Żądlącego Cienia"
+        opis_lokacji = "Trudna jama, gdzie cienie żądlące zło przemykają między skałami. Miejsce niebezpieczeństwa i ukrytych intryg."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def jama_pustki(gracz):
+        nazwa_lokacji = "Jama Pustki"
+        opis_lokacji = "Bardzo trudna jama, gdzie pustka pochłania światło. Miejsce, gdzie czas i przestrzeń tracą swoje znaczenie."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def ruiny_zapomnianej_chwaly(gracz):
+        nazwa_lokacji = "Ruiny Zapomnianej Chwały"
+        opis_lokacji = "Bardzo trudne ruiny, gdzie cienie minionych wielkości krążą. Miejsce zapomnianych podbojów i upadku."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def grota_plonacej_nocy(gracz):
+        nazwa_lokacji = "Grota Płonącej Nocy"
+        opis_lokacji = "Bardzo trudna grota, gdzie cienie płoną mrocznym ogniem. Miejsce wiecznego spopielenia i zniszczenia."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def pieklo_pustyni(gracz):
+        nazwa_lokacji = "Piekło Pustyni"
+        opis_lokacji = "Bardzo trudne piekło, gdzie cienie toną w morzu ognia. Miejsce wiecznego cierpienia i rozpaczy."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def krypta_zlowieszczej_pustki(gracz):
+        nazwa_lokacji = "Krypta Złowieszczej Pustki"
+        opis_lokacji = "Bardzo trudna krypta, gdzie cienie krążą wokół mrocznych tajemnic. Miejsce ukrytych koszmarów i złowrogiej pustki."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def zakrwawiony_plac(gracz):
+        nazwa_lokacji = "Zakrwawiony Plac"
+        opis_lokacji = "Bardzo trudny plac, gdzie cienie broczą krwią. Miejsce krwawych walk i zakazanych rytuałów."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def wyschniete_koryto(gracz):
+        nazwa_lokacji = "Wyschnięte Koryto"
+        opis_lokacji = "Bardzo trudne koryto rzeki, gdzie cienie suszą się w bezdennej pustce. Miejsce utraconej płynności i życia."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+    
+    #Góry Błękitnego Ognia
+        
+    def gora_plonacych_serc(gracz):
+        nazwa_lokacji = "Góra Płonących Serc"
+        opis_lokacji = "Średnia góra, gdzie płonące serca tchną życiem w skały. Miejsce namiętności i gorących emocji."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def gora_szmaragdowego_ognia(gracz):
+        nazwa_lokacji = "Góra Szmaragdowego Ognia"
+        opis_lokacji = "Średnia góra, gdzie szmaragdowy ogień tańczy między skałami. Miejsce zielonej magii i tajemniczych mocy."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def gora_dlony_krysztalow(gracz):
+        nazwa_lokacji = "Góra Dłonięcia Kryształów"
+        opis_lokacji = "Średnia góra, gdzie dłoniecia kryształów wznoszą się ku niebu. Miejsce magii kryształów i ich zaklętych tajemnic."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def opuszczona_kopalnia_niebianskiego_blasku(gracz):
+        nazwa_lokacji = "Opuszczona Kopalnia Niebiańskiego Blasku"
+        opis_lokacji = "Trudna opuszczona kopalnia, gdzie niebiański blask niegdyś świecił. Miejsce zapomnianej świetności i ukrytych bogactw."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def wzgorze_blekitnych_marzen(gracz):
+        nazwa_lokacji = "Wzgórze Błękitnych Marzeń"
+        opis_lokacji = "Trudne wzgórze, gdzie marzenia unoszą się niczym chmury. Miejsce pragnień i ukrytych tajemnic."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def szczyt_wulkanu_nadziei(gracz):
+        nazwa_lokacji = "Szczyt Wulkanu Nadziei"
+        opis_lokacji = "Trudny szczyt wulkanu, gdzie nadzieja bucha niczym płomienie. Miejsce ognia i wznoszących się marzeń."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def lawa_i_kamienie_przeznaczenia(gracz):
+        nazwa_lokacji = "Lawa i Kamienie Przeznaczenia"
+        opis_lokacji = "Bardzo trudna kraina, gdzie lawa kształtuje kamienie przyszłości. Miejsce nieuchronnego przeznaczenia i rozstrzygających decyzji."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def kopalnia_krysztalow_utraconych_pran(gracz):
+        nazwa_lokacji = "Kopalnia Kryształów Utraconych Pragnień"
+        opis_lokacji = "Bardzo trudna kopalnia, gdzie kryształy skrywają utracone pragnienia. Miejsce zagubionych marzeń i kuszącej mocy."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def warownia_blekitnej_mocy(gracz):
+        nazwa_lokacji = "Warownia Błękitnej Mocy"
+        opis_lokacji = "Bardzo trudna warownia, gdzie błękitna moc czuwa nad krainą. Miejsce nieosiągalnych mocy i tajemniczych zaklęć."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
+
+    def kamienne_swiatynie_nadchodzacej_burzy(gracz):
+        nazwa_lokacji = "Kamienne Świątynie Nadchodzącej Burzy"
+        opis_lokacji = "Bardzo trudne kamienne świątynie, gdzie burza zbiera swoją moc. Miejsce nieokiełznanej natury i potężnych żywiołów."
+        result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
+
+        if result:
+            print('Akcja po wyborze "tak"')
+        else:
+            pass
