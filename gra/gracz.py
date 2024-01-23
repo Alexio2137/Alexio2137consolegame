@@ -231,7 +231,7 @@ class Gracz:
         mnoznik_dp = mnozniki['mnoznik_dp']
         mnoznik_xp = mnozniki['mnoznik_xp']
 
-        wymagane_xp = self.poziomy['lvl'] * mnoznik_xp * 100
+        wymagane_xp = self.poziomy['lvl'] * mnoznik_xp + 100
 
         if dodatkowe_xp >= wymagane_xp:
             self.poziomy['lvl'] += 1
@@ -250,7 +250,6 @@ class Gracz:
             print(f"{self.imie} zdobył {zdobywane_hp} HP, {zdobywane_ap} AP, {zdobywane_dp} DP.")
         else:
             self.poziomy['xp'] += dodatkowe_xp
-            print(f"{self.imie} zdobył {dodatkowe_xp} XP, ale to nie wystarczyło do awansu na kolejny poziom.")
     
     def zdobadz_battle_xp(self, dodatkowe_xp):
         poziomy_trudnosci = {

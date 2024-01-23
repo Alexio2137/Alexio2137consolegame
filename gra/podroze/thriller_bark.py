@@ -28,7 +28,7 @@ def menu_thriller_bark(gracz):
             lokalizacje = {
                 "bagno_male": 10,
                 "bagno_srednie": 15,
-                "cmentarz_male": 5,
+                "cmentarz_maly": 5,
                 "brak": 20
             }
             wybrana_lokacja = random.choices(list(lokalizacje.keys()), weights=lokalizacje.values(), k=1)[0]
@@ -70,7 +70,7 @@ def menu_thriller_bark(gracz):
                     console.print(f"Utrata staminy: [bold]{utrata_staminy}[/bold]")
                     pasek_postepu_podrozy_wzl()
                     console.print(f"Przenoszenie do: [bold]{lokacja.__name__}[/bold]")
-                    getattr(Lokacje_i_obiekty, lokacja.__name__)()
+                    getattr(Lokacje_i_obiekty, lokacja.__name__)(gracz)
                 else:
                     print("Masz za mało staminy")
             elif wybor == 4:
