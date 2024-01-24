@@ -26,17 +26,34 @@ def menu_przesadnie_wysokie_wyzimy(gracz):
 
         def losowa_lokacja():
             lokalizacje = {
-                "bagno_male": 10,
-                "bagno_srednie": 15,
-                "cmentarz_maly": 5,
-                "brak": 20
+                "Gora Spiewających Wiatrow": 20,
+                "Przelecz Ognistego Nieba": 20,
+                "Klif Wieczornej Chwaly": 20,
+                "Szczyt Gorski Nadziei": 20,
+                "Wodospad Melodii": 15,
+                "Spekane Skaly Dzwiekow": 15,
+                "Skalna Tarcza Mroznych Wiatrow": 15,
+                "Chata Lowcy Zagubionych Czasow": 15,
+                "Fort Obronny Zlotej Er": 10,
+                "Krysztalowy Dwor": 10
             }
+
             wybrana_lokacja = random.choices(list(lokalizacje.keys()), weights=lokalizacje.values(), k=1)[0]
-            return getattr(Lokacje_i_obiekty, wybrana_lokacja)
+
+            # Zmiana spacji na podkreślenie w nazwie lokacji
+            wybrana_lokacja_atrybut = wybrana_lokacja.lower().replace(" ", "_")
+
+            # Teraz sprawdzamy, czy taki atrybut istnieje w Lokacje_i_obiekty
+            if hasattr(Lokacje_i_obiekty, wybrana_lokacja_atrybut):
+                lokacja = getattr(Lokacje_i_obiekty, wybrana_lokacja_atrybut)
+                return lokacja
+            else:
+                print(f"Nie znaleziono lokacji o nazwie: {wybrana_lokacja}")
+                return None
 
         console.clear()
 
-        table_info = Table(title="Przesadnie wysokie wyzimy", show_header=False, header_style="bold magenta")
+        table_info = Table(title="Przesadnie wysokie wyżyny", show_header=False, header_style="bold magenta")
         table_info.add_column('Atrybut', style="cyan")
         table_info.add_column('Wartość', style="cyan")
         table_info.add_row('Punkty życia (HP)', f"[red]{gracz.hp}[/red]")
@@ -53,27 +70,29 @@ def menu_przesadnie_wysokie_wyzimy(gracz):
         table_options.add_row('[cyan]3[/cyan]', 'Podróż po krainie')
         table_options.add_row('[cyan]4[/cyan]', 'Opuść krainę')
 
-        console.print(Panel.fit(table_info, title="Przesadnie wysokie wyzimy", border_style="bold magenta"))
+        console.print(Panel.fit(table_info, title="Przesadnie wysokie wyżyny", border_style="bold magenta"))
         console.print(Panel.fit(table_options, title="Dostępne opcje", border_style="bold cyan"))
 
         try:
-            wybor = int(input("Wybierz numer opcji: "))
-            if wybor == 1:
+            numer_opcji = int(input("Wybierz numer opcji: "))
+            if numer_opcji == 1:
                 gracz.menu_gracza()
-            elif wybor == 2:
+            elif numer_opcji == 2:
                 Akcje.menu_akcji(gracz)
-            elif wybor == 3:
+            elif numer_opcji == 3:
                 lokacja = losowa_lokacja()
-                if gracz.stamina >= 20:
+                if gracz.stamina >= 20 and lokacja is not None:
                     utrata_staminy = random.randint(3, 5)
                     gracz.odejmij_stamine(utrata_staminy)
                     console.print(f"Utrata staminy: [bold]{utrata_staminy}[/bold]")
                     pasek_postepu_podrozy_wzl()
-                    console.print(f"Przenoszenie do: [bold]{lokacja.__name__}[/bold]")
-                    getattr(Lokacje_i_obiekty, lokacja.__name__)(gracz)
+                    console.print(f"Przenoszenie do: [bold]{lokacja.__name__}[/bold]")  # Użyj __name__ aby uzyskać nazwę funkcji
+                    lokacja(gracz)
+                elif lokacja is None:
+                    print("Nie udało się znaleźć lokacji.")
                 else:
                     print("Masz za mało staminy")
-            elif wybor == 4:
+            elif numer_opcji == 4:
                 break
             else:
                 console.print("Nieprawidłowy numer opcji. Spróbuj ponownie.", style="bold red")

@@ -10,7 +10,7 @@ from Akcje import Akcje
 console = Console()
 
 class Lokacje_i_obiekty:
-    def dzialanie_lokacji(gracz, ilosc_jedzenia, ilosc_pragnienia, ilosc_xp, nazwa_lokacji, opis_lokacji):
+    def dzialanie_lokacji(gracz, poziom_trudnosci, ilosc_jedzenia, ilosc_pragnienia, ilosc_xp, nazwa_lokacji, opis_lokacji):
         console.clear()
 
         # Odejmowanie jedzenia i pragnienia
@@ -21,15 +21,18 @@ class Lokacje_i_obiekty:
         gracz.zwieksz_poziom(ilosc_xp)
 
         # Wyświetlanie komunikatu
-        panel_data = [
-            ["Ilość jedzenia", str(ilosc_jedzenia)],
-            ["Ilość pragnienia", str(ilosc_pragnienia)],
-            ["Ilość XP", str(ilosc_xp)],
-            ["Nazwa lokacji", nazwa_lokacji],
-            ["Opis lokacji", opis_lokacji],
-        ]
+        table = Table(title=f"[bold magenta]{nazwa_lokacji}[/bold magenta]", style="bold cyan")
+        table.add_column("Atrybut")
+        table.add_column("Wartość")
 
-        panel_table = Panel.fit_table(panel_data, title=f"[bold magenta]{nazwa_lokacji}[/bold magenta]", border_style="bold cyan")
+        table.add_row("Ilość jedzenia", str(ilosc_jedzenia))
+        table.add_row("Ilość pragnienia", str(ilosc_pragnienia))
+        table.add_row("Ilość XP", str(ilosc_xp))
+        table.add_row("Nazwa lokacji", nazwa_lokacji)
+        table.add_row("Opis lokacji", opis_lokacji)
+        table.add_row("Poziom trudności", poziom_trudnosci)
+
+        panel_table = Panel(table, border_style="bold cyan")
         console.print(panel_table)
 
         while True:
@@ -44,7 +47,6 @@ class Lokacje_i_obiekty:
                 print("Nieprawidłowy wybór. Spróbuj ponownie.")
                 time.sleep(2)
 
-
     #Wiecznie zielone łąki
 
     def polana_kwitnacych_roz(gracz):
@@ -53,7 +55,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Łatwy", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -63,7 +65,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Łatwy", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -73,7 +75,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Łatwy", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -83,7 +85,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Łatwy", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -93,7 +95,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -103,7 +105,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -113,7 +115,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -123,7 +125,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -133,7 +135,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -143,7 +145,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -155,7 +157,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -165,7 +167,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -175,7 +177,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -185,7 +187,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -195,7 +197,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -205,7 +207,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -215,7 +217,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -225,7 +227,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -235,7 +237,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -245,7 +247,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
     
@@ -258,7 +260,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Łatwy", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -268,7 +270,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Łatwy", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -278,7 +280,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Łatwy", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -288,7 +290,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -298,7 +300,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -308,7 +310,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -318,7 +320,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -328,7 +330,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -338,7 +340,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -348,7 +350,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
     
@@ -358,7 +360,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -368,7 +370,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
     
@@ -380,7 +382,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -390,7 +392,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -400,7 +402,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -410,7 +412,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -420,7 +422,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -430,7 +432,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -440,7 +442,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -450,7 +452,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -460,7 +462,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -470,7 +472,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -481,7 +483,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -491,7 +493,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -501,7 +503,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -511,7 +513,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -521,7 +523,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -531,7 +533,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -541,7 +543,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -551,7 +553,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -561,7 +563,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -571,7 +573,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
     
@@ -583,7 +585,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -593,7 +595,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -603,7 +605,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Średni", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -613,7 +615,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -623,7 +625,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -633,7 +635,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -643,7 +645,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -653,7 +655,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -663,7 +665,7 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
 
@@ -673,6 +675,6 @@ class Lokacje_i_obiekty:
         result = Lokacje_i_obiekty.dzialanie_lokacji(gracz, "Bardzo Trudny", random.randint(1, 3), random.randint(1, 3), random.randint(1, 5), nazwa_lokacji, opis_lokacji)
 
         if result:
-            print('Akcja po wyborze "tak"')
+            input('Akcja po wyborze "tak"')
         else:
             pass
